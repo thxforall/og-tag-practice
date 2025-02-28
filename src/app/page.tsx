@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Social Share Example - My NextJS App',
@@ -8,7 +9,6 @@ export const metadata: Metadata = {
     description: '오리너구리 이미지입니다. :)',
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://your-domain.com', // 실제 URL로 변경하세요
     siteName: 'My NextJS App',
     images: [
       { url: '/platypus.webp', width: 512, height: 512, alt: '오리너구리 이미지' },
@@ -37,10 +37,12 @@ export default function Home() {
       </p>
       <div className="mt-8 relative overflow-hidden rounded-xl">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 mix-blend-overlay"></div>
-        <img
+        <Image
           src="/platypus.webp"
           alt="오리너구리 이미지" 
           className="w-full max-w-md rounded-lg shadow-lg relative z-10"
+          width={512}
+          height={512}
         />
       </div>
     </main>
